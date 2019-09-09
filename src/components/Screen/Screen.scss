@@ -1,0 +1,15 @@
+.Screen {
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	.image-left,
+	.image-right {
+		transition: all 0.6s ease-in-out;
+	}
+	.image-left {
+		transform: translateX(-300px);
+	}
+	.image-right {
+		transform: translateX(-250px);
+	}
+}

@@ -1,0 +1,61 @@
+.Header {
+	display: flex;
+	padding: 0 2%;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	height: 50px;
+	margin-top: 20px;
+	// & > * {
+	// 	border: 1px solid black;
+	// }
+	.left {
+		flex: 1;
+		min-width: 300px;
+	}
+	.mid {
+		display: flex;
+		align-items: center;
+		flex: 3;
+		justify-content: center;
+		.available {
+			margin: 0 10px;
+			background: #42b72a;
+			height: 10px;
+			width: 10px;
+			border-radius: 5px;
+		}
+	}
+	.right {
+		display: flex;
+		flex: 2;
+		justify-content: space-evenly;
+		max-width: 400px;
+		.pricing,
+		.resume {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.pricing {
+			font-size: 1rem;
+			min-width: 100px;
+		}
+		.resume {
+			height: 50%;
+			a {
+				font-weight: inherit;
+				padding: 5px 10px;
+				text-decoration: none;
+				background: goldenrod;
+				color: white;
+				transition: all 0.3s ease-in-out;
+				&:hover {
+					background: white;
+					color: goldenrod;
+				}
+			}
+		}
+	}
+}
