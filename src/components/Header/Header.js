@@ -19,14 +19,25 @@ class Header extends React.Component {
 					For Hire <div className='available'></div>
 				</div>
 				<div className='right'>
-					<div
-						className='pricing'
-						onClick={() => {
-							togglePricing();
-						}}
-					>
-						{orderShowing ? "" : isActive ? `Home` : `Pricing`}
-					</div>
+					{orderShowing ? (
+						<div
+							className='pricing'
+							onClick={() => {
+								console.log("Home");
+							}}
+						>
+							Home
+						</div>
+					) : (
+						<div
+							className='pricing'
+							onClick={() => {
+								togglePricing();
+							}}
+						>
+							{orderShowing ? "" : isActive ? `Home` : `Pricing`}
+						</div>
+					)}
 					<div className='resume'>
 						<a href='../../downloads/englishResume.pdf' download>
 							Get resume

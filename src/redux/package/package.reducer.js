@@ -7,6 +7,11 @@ const initialState = {
 
 const packageReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case packageTypes.ABANDON_ORDER:
+			return {
+				...state,
+				orderShowing: false
+			};
 		case packageTypes.SELECT_PACKAGE:
 			return {
 				...state,

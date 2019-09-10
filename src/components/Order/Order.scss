@@ -1,7 +1,7 @@
 .Order {
 	position: absolute;
 	box-sizing: border-box;
-	padding: 100px;
+	padding: 50px;
 	display: flex;
 	height: 90vh;
 	background: white;
@@ -9,34 +9,105 @@
 	width: 100vw;
 	transition: 0.4s all ease-in-out;
 	transform: translateX(-2000px);
-	// & > * {
-	// 	border: 1px solid black;
-	// }
-	.left {
+	.how-it-works {
+		background: #202020;
+		color: white;
+		padding: 20px 40px;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		align-items: center;
+		min-width: 300px;
+		.questions {
+			margin-top: 100px;
+			align-self: flex-start;
+			.title {
+				font-size: 2rem;
+				color: goldenrod;
+			}
+		}
+		.title {
+			font-size: 1.5rem;
+		}
+		img {
+			height: 150px;
+		}
+		.subtitle {
+			margin-top: 20px;
+			.detail {
+				display: flex;
+				margin: 5px 0;
+				align-items: center;
+				font-variation-settings: "wght" 100;
+			}
+			img {
+				height: 25px;
+				margin: 0 5px;
+			}
+		}
+	}
+	.order-details {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		flex: 1;
+		flex: 2;
+		.image {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
 		.text {
-			font-size: 4rem;
-			text-transform: uppercase;
+			font-size: 2rem;
 			color: #202020;
+			.order-detail {
+				display: grid;
+				grid-template-columns: 1.2fr 1fr;
+				font-size: 1.5rem;
+				font-variation-settings: "wght" 100;
+				.number {
+					text-transform: uppercase;
+					font-family: "Alfa Slab One";
+					margin-left: 15px;
+				}
+			}
 		}
 	}
-	.right {
+	.lets-talk {
+		margin: 0 100px;
 		flex: 3;
 		.title {
 			font-size: 5rem;
+			text-transform: uppercase;
+		}
+		hr {
+			border: 7px solid black;
+			margin-bottom: 100px;
+			width: 55%;
 		}
 		.input {
 			display: flex;
 			flex-direction: column;
 			max-width: 300px;
 			input {
+				box-sizing: border-box;
+				width: 400px;
 				height: 30px;
 				padding: 0 10px;
+				margin-bottom: 10px;
+				height: 40px;
 			}
+		}
+		.about {
+			display: flex;
+			flex-direction: column;
+			textarea {
+				resize: none;
+				box-sizing: border-box;
+				padding: 10px;
+			}
+			width: 400px;
 		}
 	}
 }

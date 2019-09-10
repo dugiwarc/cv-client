@@ -47,6 +47,7 @@ class StripeButton extends React.Component {
 		return (
 			<div className='StripeButton' onClick={this.handleClick}>
 				<StripeCheckout
+					panelLabel='Place order for'
 					name='Tusk'
 					description='Office Services'
 					amount={priceForStripe}
