@@ -12,13 +12,14 @@ import "./Project.scss";
 class Project extends React.Component {
 	render() {
 		const { selectedProject } = this.props;
-		const height = -87;
+		const height = -89;
 		const projectStyles = {
 			transform: `translateY(${height * (selectedProject - 1)}vh)`
 		};
 		return (
 			<div className='Project' style={projectStyles}>
 				<Title title={this.props.title} />
+				<div className='link'>{this.props.link}</div>
 				<Screen
 					imageMobile={this.props.imageMobile}
 					imageDesktop={this.props.imageDesktop}

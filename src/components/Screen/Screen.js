@@ -10,6 +10,7 @@ class Screen extends React.Component {
 	};
 	handleImageLeft = () => {
 		this.setState({ leftImageHovered: !this.state.leftImageHovered });
+		console.log("eee");
 	};
 	handleImageRight = () => {
 		this.setState({ rightImageHovered: !this.state.rightImageHovered });
@@ -30,7 +31,12 @@ class Screen extends React.Component {
 						alt='desktop mockup'
 						useMap='#image-map'
 					/>
-					<map name='image-map'>
+					<map
+						name='image-map'
+						onClick={evt => {
+							evt.preventDefault();
+						}}
+					>
 						<area
 							onMouseEnter={this.handleImageLeft}
 							onMouseLeave={this.handleImageLeft}
@@ -43,25 +49,32 @@ class Screen extends React.Component {
 						/>
 					</map>
 				</div>
-				<div className='image-right' style={imageRightStyle}>
-					<img
-						src={this.props.imageMobile && this.props.imageMobile}
-						alt='mobile mockup'
-						useMap='#image-map-mobile'
-					/>
-					<map name='image-map-mobile'>
-						<area
-							onMouseEnter={this.handleImageRight}
-							onMouseLeave={this.handleImageRight}
-							target=''
-							alt=''
-							title=''
-							href=''
-							coords={this.props.imageMobileCoords}
-							shape='poly'
+				{this.props.imageMobile && (
+					<div className='image-right' style={imageRightStyle}>
+						<img
+							src={this.props.imageMobile && this.props.imageMobile}
+							alt='mobile mockup'
+							useMap='#image-map-mobile'
 						/>
-					</map>
-				</div>
+						<map
+							name='image-map-mobile'
+							onClick={evt => {
+								evt.preventDefault();
+							}}
+						>
+							<area
+								onMouseEnter={this.handleImageRight}
+								onMouseLeave={this.handleImageRight}
+								target=''
+								alt=''
+								title=''
+								href=''
+								coords={this.props.imageMobileCoords}
+								shape='poly'
+							/>
+						</map>
+					</div>
+				)}
 			</div>
 		);
 	}

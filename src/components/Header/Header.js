@@ -6,27 +6,28 @@ import "./Header.scss";
 
 // Actions
 import { togglePricing } from "../../redux/pricing/pricing.actions";
+import { hideOrder } from "../../redux/package/package.actions";
 
 class Header extends React.Component {
 	render() {
-		const { togglePricing, isActive, orderShowing } = this.props;
+		const { togglePricing, isActive, orderShowing, hideOrder } = this.props;
 		return (
 			<div className='Header'>
 				<div className='left'>
 					<h2>Curriculum Vitae</h2>
 				</div>
 				<div className='mid'>
-					For Hire <div className='available'></div>
+					Available <div className='available'></div>
 				</div>
 				<div className='right'>
 					{orderShowing ? (
 						<div
 							className='pricing'
 							onClick={() => {
-								console.log("Home");
+								hideOrder();
 							}}
 						>
-							Home
+							Pricing
 						</div>
 					) : (
 						<div
@@ -59,5 +60,5 @@ const mapStateToProps = ({
 
 export default connect(
 	mapStateToProps,
-	{ togglePricing }
+	{ togglePricing, hideOrder }
 )(Header);

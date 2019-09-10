@@ -43,7 +43,7 @@ class StripeButton extends React.Component {
 	render() {
 		const { price } = this.props;
 		const priceForStripe = price * 100;
-		const publisheableKey = "pk_test_K3VJ6ZLvLKdhLaJTglAd65Qk";
+		const publisheableKey = "pk_live_m7DjSwosTrieGNYIOWYpqiwl";
 		return (
 			<div className='StripeButton' onClick={this.handleClick}>
 				<StripeCheckout

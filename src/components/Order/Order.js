@@ -68,13 +68,7 @@ class Order extends Component {
 					</div>
 					<div className='about'>
 						<label htmlFor='about'>Things I need to know*</label>
-						<textarea
-							name='about'
-							id='about'
-							cols='30'
-							rows='10'
-							resize={false}
-						></textarea>
+						<textarea name='about' id='about' cols='30' rows='10'></textarea>
 					</div>
 					<StripeButton price={orderShowing && this.state.price} />
 				</div>
@@ -100,8 +94,8 @@ class Order extends Component {
 						</div>
 					</div>
 					<div className='questions'>
-						<div className='title'>Questions?</div>
-						<small>Email me tusk@tusk.world</small>
+						<div className='title'>Contact</div>
+						<small>tusk@tusk.world</small>
 					</div>
 				</div>
 			</div>

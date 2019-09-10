@@ -24,6 +24,7 @@ const Projects = () => {
 							colors={item.colors}
 							fonts={item.fonts}
 							tools={item.tools}
+							link={item.link}
 						/>
 					);
 				})}
