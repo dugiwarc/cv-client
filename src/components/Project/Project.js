@@ -10,36 +10,36 @@ import { connect } from "react-redux";
 import "./Project.scss";
 
 class Project extends React.Component {
-	render() {
-		const { selectedProject } = this.props;
-		const height = -89;
-		const projectStyles = {
-			transform: `translateY(${height * (selectedProject - 1)}vh)`
-		};
-		return (
-			<div className='Project' style={projectStyles}>
-				<Title title={this.props.title} />
-				<div className='link'>{this.props.link}</div>
-				<Screen
-					imageMobile={this.props.imageMobile}
-					imageDesktop={this.props.imageDesktop}
-					imageDesktopCoords={this.props.imageDesktopCoords}
-					imageMobileCoords={this.props.imageMobileCoords}
-				/>
-				<Colors colors={this.props.colors} />
-				<div className='tools-and-fonts'>
-					<Fonts fonts={this.props.fonts} />
-					<Tools tools={this.props.tools} />
-				</div>
-			</div>
-		);
-	}
+  render() {
+    const { selectedProject } = this.props;
+    const height = -840;
+    const projectStyles = {
+      transform: `translateY(${height * (selectedProject - 1)}px)`
+    };
+    return (
+      <div className="Project" style={projectStyles}>
+        <Title title={this.props.title} />
+        <div className="link">{this.props.link}</div>
+        <Screen
+          imageMobile={this.props.imageMobile}
+          imageDesktop={this.props.imageDesktop}
+          imageDesktopCoords={this.props.imageDesktopCoords}
+          imageMobileCoords={this.props.imageMobileCoords}
+        />
+        <Colors colors={this.props.colors} />
+        <div className="tools-and-fonts">
+          <Fonts fonts={this.props.fonts} />
+          <Tools tools={this.props.tools} />
+        </div>
+      </div>
+    );
+  }
 }
 const mapStateToProps = ({ navigationState: { selectedProject } }) => ({
-	selectedProject
+  selectedProject
 });
 
 export default connect(
-	mapStateToProps,
-	null
+  mapStateToProps,
+  null
 )(Project);
