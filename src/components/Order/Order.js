@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import StripeButton from "../StripeButton/StripeButton";
 
@@ -15,8 +15,32 @@ import data from "../../data/packages.data";
 // Styles
 import "./Order.scss";
 
+// Actions
+import { clickPricing } from "../../redux/pricing/pricing.actions";
+
 class Order extends Component {
-  state = { price: 0, hasSetPrice: false };
+  state = {
+    price: 0,
+    hasSetPrice: false,
+    name: "",
+    surname: "",
+    email: "",
+    about: ""
+  };
+  onChange = evt => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  };
+  submitOrder = () => {
+    const data = {
+      name: this.state.name,
+      surname: this.state.surname,
+      email: this.state.email,
+      about: this.state.about
+    };
+    this.props.clickPricing(data);
+  };
   render() {
     const { selectedPackage, orderShowing } = this.props;
     const containerStyles = {
@@ -56,21 +80,48 @@ class Order extends Component {
           <hr />
           <div className="input">
             <label htmlFor="name">Name *</label>
-            <input type="text" id="name" placeholder="Alex" />
+            <input
+              onChange={evt => this.onChange(evt)}
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Alex"
+            />
           </div>
           <div className="input">
             <label htmlFor="surname">Surname *</label>
-            <input type="text" id="surname" placeholder="Smith" />
+            <input
+              onChange={evt => this.onChange(evt)}
+              type="text"
+              name="surname"
+              id="surname"
+              placeholder="Smith"
+            />
           </div>
           <div className="input">
             <label htmlFor="email">Email *</label>
-            <input type="email" id="email" placeholder="alexsmith@mail.com" />
+            <input
+              name="email"
+              onChange={evt => this.onChange(evt)}
+              type="email"
+              id="email"
+              placeholder="alexsmith@mail.com"
+            />
           </div>
           <div className="about">
             <label htmlFor="about">Things I need to know*</label>
-            <textarea name="about" id="about" cols="30" rows="10"></textarea>
+            <textarea
+              onChange={evt => this.onChange(evt)}
+              name="about"
+              id="about"
+              cols="30"
+              rows="10"
+            ></textarea>
           </div>
-          <StripeButton price={orderShowing && this.props.price} />
+          <StripeButton
+            price={orderShowing && this.props.price}
+            submitOrder={this.submitOrder}
+          />
         </div>
         <div className="how-it-works">
           <div className="title">
@@ -114,5 +165,5 @@ const mapStateToProps = ({
 
 export default connect(
   mapStateToProps,
-  null
+  { clickPricing }
 )(Order);
