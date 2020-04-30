@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-
 // Styles
 import "./Header.scss";
 
@@ -14,7 +13,14 @@ class Header extends React.Component {
     return (
       <div className="Header">
         <div className="left">
-          <h2>Curriculum Vitae</h2>
+          <h2
+            onClick={() => {
+              hideOrder();
+              isActive && togglePricing();
+            }}
+          >
+            Curriculum Vitae
+          </h2>
         </div>
         <div className="mid">
           Available <div className="available"></div>
@@ -55,10 +61,10 @@ class Header extends React.Component {
 
 const mapStateToProps = ({
   pricingState: { isActive },
-  packageState: { orderShowing }
+  packageState: { orderShowing },
 }) => ({
   isActive,
-  orderShowing
+  orderShowing,
 });
 
 export default connect(mapStateToProps, { togglePricing, hideOrder })(Header);
