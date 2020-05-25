@@ -4,6 +4,7 @@
   flex: 2;
   img {
     height: -webkit-fill-available;
+    max-height: 95%;
   }
   .image-left,
   .image-right {
@@ -13,6 +14,6 @@
     transform: translateX(-250px);
   }
   .image-right {
-    transform: translateX(-250px);
+    transform: translateX(-450px);
   }
 }
