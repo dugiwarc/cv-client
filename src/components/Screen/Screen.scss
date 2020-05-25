@@ -1,10 +1,9 @@
 .Screen {
-    display: flex;
-    overflow: hidden;
-    flex: 2 1;
-    justify-content: flex-start;
-    align-items: normal;
-}
+  display: flex;
+  overflow: hidden;
+  flex: 2 1;
+  justify-content: flex-start;
+  align-items: normal;
   img {
     height: -moz-available, -webkit-fill-available;
     width: -moz-available, -webkit-fill-available;
