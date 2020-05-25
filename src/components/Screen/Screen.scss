@@ -1,13 +1,12 @@
 .Screen {
-  display: flex;
+  // display: flex;
   overflow: hidden;
   flex: 2;
   img {
     object-fit: cover;
-    // max-width: 100%;
-    height: auto;
+    height: -moz-available, -webkit-fill-available;
     z-index: -1;
-    // height: auto;
+    width: -moz-available, -webkit-fill-available;
   }
   .image-left,
   .image-right {
@@ -17,6 +16,6 @@
     transform: translateX(-250px);
   }
   .image-right {
-    transform: translateX(-450px);
+    transform: translateX(-250px);
   }
 }
