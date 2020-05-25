@@ -1,11 +1,14 @@
 .Screen {
-  display: flex;
-  overflow: hidden;
-  flex: 2;
+    display: flex;
+    overflow: hidden;
+    flex: 2 1;
+    justify-content: flex-start;
+    align-items: normal;
+}
   img {
     height: -moz-available, -webkit-fill-available;
-    z-index: -1;
     width: -moz-available, -webkit-fill-available;
+    z-index: -1;
     max-height: 100%;
   }
   .image-left,
