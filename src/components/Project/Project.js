@@ -12,9 +12,9 @@ import "./Project.scss";
 class Project extends React.Component {
   render() {
     const { selectedProject } = this.props;
-    const height = -840;
+    const height = -90;
     const projectStyles = {
-      transform: `translateY(${height * (selectedProject - 1)}px)`,
+      transform: `translateY(${height * (selectedProject - 1)}vh)`,
     };
     return (
       <div className="Project" style={projectStyles}>
