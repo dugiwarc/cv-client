@@ -14,12 +14,12 @@ class Project extends React.Component {
     const { selectedProject } = this.props;
     const height = -840;
     const projectStyles = {
-      transform: `translateY(${height * (selectedProject - 1)}px)`
+      transform: `translateY(${height * (selectedProject - 1)}px)`,
     };
     return (
       <div className="Project" style={projectStyles}>
-        <Title title={this.props.title} />
-        <div className="link">{this.props.link}</div>
+        <Title title={this.props.title} link={this.props.link} />
+
         <Screen
           imageMobile={this.props.imageMobile}
           imageDesktop={this.props.imageDesktop}
@@ -36,10 +36,7 @@ class Project extends React.Component {
   }
 }
 const mapStateToProps = ({ navigationState: { selectedProject } }) => ({
-  selectedProject
+  selectedProject,
 });
 
-export default connect(
-  mapStateToProps,
-  null
-)(Project);
+export default connect(mapStateToProps, null)(Project);

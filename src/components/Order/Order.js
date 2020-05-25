@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import StripeButton from "../StripeButton/StripeButton";
 
@@ -25,11 +25,11 @@ class Order extends Component {
     name: "",
     surname: "",
     email: "",
-    about: ""
+    about: "",
   };
-  onChange = evt => {
+  onChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
   submitOrder = () => {
@@ -37,21 +37,21 @@ class Order extends Component {
       name: this.state.name,
       surname: this.state.surname,
       email: this.state.email,
-      about: this.state.about
+      about: this.state.about,
     };
     this.props.clickPricing(data);
   };
   render() {
     const { selectedPackage, orderShowing } = this.props;
     const containerStyles = {
-      transform: orderShowing && "translateX(0px)"
+      transform: orderShowing && "translateX(0px)",
     };
     if (orderShowing) {
-      const foundPackage = data.filter(item => item.id === selectedPackage);
+      const foundPackage = data.filter((item) => item.id === selectedPackage);
       !this.state.hasSetPrice &&
         this.setState({
           price: foundPackage[0].price,
-          hasSetPrice: true
+          hasSetPrice: true,
         });
     }
     return (
@@ -81,7 +81,7 @@ class Order extends Component {
           <div className="input">
             <label htmlFor="name">Name *</label>
             <input
-              onChange={evt => this.onChange(evt)}
+              onChange={(evt) => this.onChange(evt)}
               type="text"
               name="name"
               id="name"
@@ -91,7 +91,7 @@ class Order extends Component {
           <div className="input">
             <label htmlFor="surname">Surname *</label>
             <input
-              onChange={evt => this.onChange(evt)}
+              onChange={(evt) => this.onChange(evt)}
               type="text"
               name="surname"
               id="surname"
@@ -102,7 +102,7 @@ class Order extends Component {
             <label htmlFor="email">Email *</label>
             <input
               name="email"
-              onChange={evt => this.onChange(evt)}
+              onChange={(evt) => this.onChange(evt)}
               type="email"
               id="email"
               placeholder="alexsmith@mail.com"
@@ -111,7 +111,7 @@ class Order extends Component {
           <div className="about">
             <label htmlFor="about">Things I need to know*</label>
             <textarea
-              onChange={evt => this.onChange(evt)}
+              onChange={(evt) => this.onChange(evt)}
               name="about"
               id="about"
               cols="30"
@@ -155,15 +155,12 @@ class Order extends Component {
 }
 
 const mapStateToProps = ({
-  packageState: { selectedPackage, orderShowing, price, type }
+  packageState: { selectedPackage, orderShowing, price, type },
 }) => ({
   selectedPackage,
   orderShowing,
   price,
-  type
+  type,
 });
 
-export default connect(
-  mapStateToProps,
-  { clickPricing }
-)(Order);
+export default connect(mapStateToProps, { clickPricing })(Order);

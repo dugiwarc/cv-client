@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap");
 @font-face {
-	font-family: "Gingham";
-	src: url("./assets/fonts/Gingham.woff2") format("woff2");
+  font-family: "Gingham";
+  src: url("./assets/fonts/Gingham.woff2") format("woff2");
 }
 
 * {
-	margin-right: 0;
-	margin-left: 0;
-	font-family: "Gingham", sans-serif;
-	font-variation-settings: "wght" 700, "wdth" 400;
+  margin: 0;
+  padding: 0;
+  font-family: "Gingham", sans-serif;
+  font-variation-settings: "wght" 700, "wdth" 400;
 }

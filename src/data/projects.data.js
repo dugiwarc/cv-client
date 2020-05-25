@@ -34,7 +34,7 @@ const data = [
         image: latoFont,
       },
     ],
-    link: "lightency.netlify.com",
+    link: "http://lightency.netlify.com",
   },
   {
     id: 2,
