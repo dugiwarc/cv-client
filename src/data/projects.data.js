@@ -21,7 +21,7 @@ const data = [
     title: "Lightency",
     description:
       "I was tasked to give the company website a new look and correct some inconsistencies found in the old one",
-    imageMobile: lightencyMobile,
+    imageMobile: null,
     imageDesktop: lightencyDesktop,
     imageMobileCoords: "47,45,72,4,342,7,368,35,370,610,343,658,88,658,48,621",
     imageDesktopCoords:
