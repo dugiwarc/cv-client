@@ -3,10 +3,7 @@
   overflow: hidden;
   flex: 2;
   img {
-    object-fit: cover;
-    height: -moz-available, -webkit-fill-available;
-    z-index: -1;
-    width: -moz-available, -webkit-fill-available;
+    height: -webkit-fill-available;
   }
   .image-left,
   .image-right {
