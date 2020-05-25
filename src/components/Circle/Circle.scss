@@ -1,5 +1,11 @@
 .Circle {
-	margin: 5px 35px;
-	border-radius: 20px;
-	background: goldenrod;
+  margin: 5px 35px;
+  border-radius: 20px;
+  background: goldenrod;
+  cursor: pointer;
+}
+
+.Circle:hover {
+  transform: scale(1.2);
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
 }
