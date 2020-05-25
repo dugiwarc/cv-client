@@ -5,9 +5,8 @@
   justify-content: flex-start;
   align-items: normal;
   img {
-    height: -moz-available, -webkit-fill-available;
     z-index: -1;
-    max-height: 100%;
+    max-height: -webkit-fill-available;
     max-width: 100%;
   }
   .image-left,
