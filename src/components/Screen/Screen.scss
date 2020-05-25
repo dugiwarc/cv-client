@@ -6,9 +6,9 @@
   align-items: normal;
   img {
     height: -moz-available, -webkit-fill-available;
-    width: -moz-available, -webkit-fill-available;
     z-index: -1;
     max-height: 100%;
+    max-width: 100%;
   }
   .image-left,
   .image-right {
