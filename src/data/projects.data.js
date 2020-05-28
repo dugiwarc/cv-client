@@ -1,4 +1,4 @@
-import lightencyMobile from "../assets/images/lightency-mobile-mockup.png";
+// import lightencyMobile from "../assets/images/lightency-mobile-mockup.png";
 import lightencyDesktop from "../assets/images/lightency-laptop-mockup.png";
 import tuskDesktop from "../assets/images/tusk-laptop-mockup.png";
 import answersVillageDesktop from "../assets/images/answers-village-laptop-mockup.png";

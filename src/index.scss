@@ -10,3 +10,34 @@
   font-family: "Gingham", sans-serif;
   font-variation-settings: "wght" 700, "wdth" 400;
 }
+
+@media only screen and (max-width: 600px) {
+  .Projects,
+  .LandingPage .SidebarNavigator,
+  .SocialBox,
+  .Header .mid,
+  .Header .right {
+    display: none;
+  }
+
+  .Profile .name-and-status .name {
+    font-size: 5rem;
+  }
+
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+  .LandingPage {
+    margin: 20px;
+  }
+
+  .Languages {
+    width: 100%;
+    justify-content: unset;
+  }
+
+  .Header {
+    padding: 0 5%;
+  }
+}
