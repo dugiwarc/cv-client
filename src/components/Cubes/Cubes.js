@@ -1,11 +1,11 @@
 /** @format */
 
 import React, { useEffect, useRef, useState } from "react";
-import { Spring } from "react-spring/renderprops";
 
 const Cubes = () => {
 	const pathRef = useRef();
 	const [offset, setOffset] = useState(null);
+	console.log(offset);
 
 	useEffect(() => {
 		setOffset(pathRef.current.getTotalLength());
