@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import NotFound from "./components/NotFound/NotFound";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Pages
