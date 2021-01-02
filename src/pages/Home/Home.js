@@ -8,7 +8,8 @@ import LandingPage from "../../components/LandingPage/LandingPage";
 
 import "./Home.scss";
 
-class Home extends React.Component {
+const Home = () =>{
+  let t = "32325";
   state = { hasLoaded: false };
   componentDidMount() {
     setTimeout(() => {
@@ -17,7 +18,6 @@ class Home extends React.Component {
       });
     }, 900);
   }
-  render() {
     const { hasLoaded } = this.state;
     return (
       <>
@@ -33,7 +33,6 @@ class Home extends React.Component {
         )}
       </>
     );
-  }
 }
 
 export default Home;
