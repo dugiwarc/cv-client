@@ -30,8 +30,10 @@
 		"lint": "eslint src"
 	},
 	"husky": {
-		"pre-commit": "yarn lint && yarn test",
-		"pre-push": "yarn lint && yarn test"
+		"hooks": {
+			"pre-commit": "yarn lint && yarn test",
+			"pre-push": "yarn lint && yarn test"
+		}
 	},
 	"eslintConfig": {
 		"extends": "react-app"
