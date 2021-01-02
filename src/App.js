@@ -14,7 +14,6 @@ const App = () => {
 			<Router>
 				<Route exact path='/' component={Home} />
 				<Route exact path='/planets' component={Planets} />
-				<Route render={() => <NotFound />} />
 			</Router>
 		</div>
 	);
