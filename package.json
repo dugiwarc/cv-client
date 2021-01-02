@@ -25,7 +25,13 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"test": "cross-env CI=true react-scripts test --env=jsdom",
+		"lint": "eslint src"
+	},
+	"husky": {
+		"pre-commit": "yarn lint && yarn test",
+		"pre-push": "yarn lint && yarn test"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -41,5 +47,9 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"husky": "^4.3.6"
 	}
 }
