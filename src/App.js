@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home/Home";
-import Planets from "./pages/Planets/Planets";
+import NotFound from "./components/NotFound/NotFound";
 
 const App = () => {
 	return (
 		<div className='App'>
 			<Router>
 				<Route exact path='/' component={Home} />
-				<Route exact path='/planets' component={Planets} />
+				<Route component={NotFound} />
 			</Router>
 		</div>
 	);
