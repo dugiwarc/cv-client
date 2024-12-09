@@ -1,11 +1,16 @@
 import { ImageResponse } from 'next/og'
 
-export const dynamic = 'force-dynamic'
+export async function generateStaticParams() {
+  return [
+    { title: 'Next.js Portfolio Starter' },
+    // Add any other titles you want to pre-generate
+  ]
+}
 
 export function GET(request: Request) {
-  let url = new URL(request.url)
-  let title = url.searchParams.get('title') || 'Next.js Portfolio Starter'
-
+  // Get the title from the URL or use default
+  const title = new URL(request.url).searchParams.get('title') || 'Next.js Portfolio Starter'
+  
   return new ImageResponse(
     (
       <div tw="flex flex-col w-full h-full items-center justify-center bg-white">
